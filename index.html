@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container " id = "cv-form">
+        <h1 class="text-center">Resume builder</h1>
+        <p class = "text-center">By shashank mudgal</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Personal information</h2>
+                <div class="form-group mt-2">
+                    <label for="nameField">Your name</label>
+                    <input type="text" name="nameField" id="name" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Phone no</label>
+                    <input type="tel" name="contactField" id="phone" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="addressField">Your Address</label>
+                    <textarea name="addressField" id="address" class="form-control"></textarea>
+                </div>
+                <p class="text-secondary">Important Link</p>
+
+                <div class="form-group mt-2">
+                    <label for="fbField">Facebook</label>
+                    <input type="text" name="fbField" id="fb" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" name="instaField" id="insta" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedinField">LinkedIn</label>
+                    <input type="text" name="linkedinField" id="link" class="form-control"></input>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <h2>Professional information</h2>
+                <div class="form-group mt-2">
+                    <label for="objectiveField">Your objective</label>
+                    <textarea name="objectiveField" id="objective" class="form-control" rows = "4"></textarea>
+                </div>
+              
+                <div class="form-group mt-2" id = "expDiv">
+                    <label for="">Work experience</label>
+                    <textarea class="form-control we-exp" rows = "3"></textarea>
+              
+                <div class="container text-center mt-2" id="expBtn">
+                    <button class="btn btn-primary" onclick="addExp()">Add</button>
+                </div>
+            </div>
+                <div class="form-group mt-2" id = "qualDiv">
+                    <label for="qe-field">Qualification</label>
+                    <textarea class="form-control qe-field" rows = "3"></textarea>
+                
+                <div class="container text-center mt-2" id =qualBtn>
+                    <button class="btn btn-primary" onclick="addqual()">Add</button>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        <div class="container text-center my-3">
+            <button class="btn btn-primary btn-lg" onclick="generateCV()">Generate CV</button>
+        </div>
+        
+    </div>
+
+    <div class="container" id = cv-template>
+        <div class="row">
+            <div class="col-md-4 text-center bg">
+                <img src="https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg" class = "img-fluid my-img" alt="">
+                <div class="container">
+                    <p id="nameT">Shashank mudgal</p>
+                    <p id = "phoneT">+916260394707 +916264855755</p>
+                    <p id = "addressT" >c-14 Amaltas colony gwl</p>
+                </div>
+                <hr>
+                <p><a id = "fbt" href="">https://www.google.com</a></p>
+                <p><a id = "instat" href="">https://www.google.com</a></p>
+                <p><a id = "linkt" href="">https://www.google.com</a></p>
+                
+         
+            </div>
+            <div class="col-md-8">
+                <h1 class="text-center" id="nameT1">Shashank Mudgal</h1>
+                <div class="card mt-2">
+                    <div class="card-header bg">
+                        <h3 >Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis atque fugiat et, exercitationem corporis ipsam eligendi porro accusantium quaerat iste illum repellendus dignissimos aliquid voluptatum adipisci dolores suscipit iusto? Aut accusantium assumenda nostrum, nisi dolor tenetur quis, voluptatum est architecto ipsa, obcaecati non unde sed ullam dolore quasi delectus officiis.</p>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-header bg">
+                        <h3 >work experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-header bg">
+                        <h3 >Academic qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="eqT">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button class="btn bg" onclick="printPage()" >print CV</button>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

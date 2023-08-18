@@ -1,0 +1,12 @@
+#cv-form{
+/* display: none; */
+}
+#cv-template{
+    display: none;
+}
+.my-img{
+    width: 200px;
+}
+.bg{
+    background-color: aqua;
+}
